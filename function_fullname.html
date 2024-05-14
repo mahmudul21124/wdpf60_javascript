@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full name Function</title>
+    <style>
+        #show {
+            width: 200px;
+            height: 50px;
+            background-color: aquamarine;
+            padding: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        function fullname(){
+            let first = prompt("Enter first name", "");
+            let last = prompt("Enter last name", "");
+            let full = first + " " + last;
+           // alert("Your Full Nmae: " + full);
+           document.getElementById("show").innerHTML = full;
+        }
+    </script>
+
+    <button onclick="fullname()">Click here</button>
+
+    <div id="show"></div>
+    
+</body>
+</html>

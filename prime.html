@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prime Number</title>
+</head>
+<body>
+
+    <script>
+        function primeCheck(){          // function start
+            let num = prompt("Enter a number", "");
+            if (num == 0){             // if x==0 start        // ==0 na dile o hobe
+                return num + "will not allowed";
+            }           // if x==0 end 
+            else if (num == 1){       // if 1 start
+                return num + " is not a prime number";
+            }           // if 1 end 
+            else if (num == 2){       // if 2 start
+                return num + " is a prime number"
+            }             // if 2 end
+            else {        // else start
+                for (let i = 2; i<num; i++){    // for loop start
+                    if (num % i == 0){      // modulas if start
+                        return num + " is not a prime number";
+                    }       // modulas if end
+                }       // for loop end
+                return num + " is a prime number";
+            }       // else end
+        }       // function end
+
+        document.write(primeCheck());
+    </script>
+    
+</body>
+</html>

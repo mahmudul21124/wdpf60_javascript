@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Max Number</title>
+</head>
+<body>
+
+    <div id="show"></div>
+    <script>
+        
+        
+        function findMax(){
+
+        let numbers = [3, ,7, 2, 8, 5, 10];
+        let max = numbers[0];      //initialize to the first value
+
+        for(let i = 1; i < numbers.length; i++){
+            if (numbers[i] > max){
+                max = numbers[i];
+            }
+        }
+
+        document.getElementById("show").innerHTML = max;
+        // document.write(max);
+        // alert(max);
+        // console.log(max);
+        }
+        
+        
+    </script>
+
+
+    <script>
+        //  function findMax(){
+
+
+        // let receive = prompt("Enter values", "");
+
+        // const numbers = receive.split(",");
+        
+        // // alert(typeof(numbers));
+        // console.log(numbers);
+
+        // // let numbers = [3, ,7, 2, 8, 5, 10];
+
+        // let max = numbers[0];      //initialize to the first value
+        // max = parseInt(max);
+
+        // for(let i = 1; i < numbers.length; i++){
+        //     if (parseInt(numbers[i]) > max){
+        //         max = numbers[i];
+        //     }
+        // }
+
+        // document.getElementById("show").innerHTML = max;
+        // // document.write(max);
+        // // alert(max);
+        // //console.log(max);
+        // }
+    </script>
+
+    <button onclick="findMax()">Click Here</button>
+
+    
+    0
+</body>
+</html>

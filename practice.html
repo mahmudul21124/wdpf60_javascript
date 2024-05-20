@@ -4,16 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Practice</title>
-    <style>
-        #result {
-            width: 450px;
-            height: 150px;
-            background-color: aqua;
-            font-size: 30px;
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
+    
 </head>
 <body>
 
@@ -40,12 +31,28 @@
 
     </script>
 
-    <button onclick="resu()">Click Here</button>
+    
 
     <script>
-        const fruits = ["Mango", "Apple", "Orange", "Lichi", "Guava"];
+        // const fruits = ["Mango", "Apple", "Orange", "Lichi", "Guava"];
 
-        document.getElementById("result").innerHTML = fruits;
+        // document.getElementById("result").innerHTML = fruits;
+    </script>
+
+    <script>
+
+        let num = [35, 21, 45, 14, 15, 8];
+        let max = num[0];
+
+        for(let x = 1; x < num.length; x++){
+            if (num[x] > max){
+                max = num[x];
+            }
+        }
+
+        document.write(max);
+        // alert(max);
+        // console.log(max);
     </script>
     
 </body>

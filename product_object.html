@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="show"></div>
+
+    <script>
+        const product = {
+            name: "Samsung Mobile",
+            price: 10000,
+            details: "lorem ipsum",
+            weight: "50g",
+        };
+
+        
+        console.log(product);      // object cannot be seen in document.write 
+
+        product.info = function(){
+            let text = "";
+            text += "Product Name:" + this.name + "<br>";
+            text += "Product Price:" + this.price + "<br>";
+            text += "Product Weight:" + this.weight + "<br>";
+            text += "Product Details:" + this.details + "<br>";
+
+            return text;
+        }
+
+        document.write(product.info());
+        // document.getElementById("show").innerHTML = product.info();
+
+    </script>
+    
+</body>
+</html>

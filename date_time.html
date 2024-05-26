@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Date & Time</title>
+</head>
+<body>
+    
+    <div id="show"></div>
+    <script>
+        let current = new Date();
+
+        let result = current.getDate();                                 // Today's Date
+        // let result = current.getHours();                             // Today's Hours
+        // let result = current.getMinutes();                           // Today's Minutes
+        // let result = current.getFullYear();                          // Today's Year
+        // let result = current.getMonth();                             // Today's Month
+        // let result = current.getDay();                               // Today's Day
+        // let result = current.getSeconds();                           // Today's Seconds
+        // let result = current.getMilliseconds();                      // Today's Milliseconds
+        // let result = current.getTime();                              //  milliseconds since January 1, 1970
+
+        document.getElementById("show").innerHTML = result;
+        // document.getElementById("show").innerHTML = current;         // current date day month time etc etc
+        // document.getElementById("show").innerHTML = Date.now();      // milliseconds since January 1, 1970
+    </script>
+</body>
+</html>

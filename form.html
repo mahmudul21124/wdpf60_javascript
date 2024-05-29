@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Form</title>
+</head>
+<body>
+
+    <form action="" name="myform">
+        <input type="text" name="email" placeholder="Enter email"><br>
+        <input type="text" name="con_email" placeholder="Repeat email"><br>
+        <input type="text" name="password" placeholder="Enter password"><br>
+        
+        <input type="button" onclick="validate()" name="Submit" value="VALIDATE">
+    </form>
+
+    <script>
+        function validate(){
+            // let fname = document.forms['myform']['fname'].value;
+            let email_1 = document.myform.email.value;
+            let email_2 = document.myform.con_email.value;
+            let pass = document.myform.password.value;
+            let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
+            let result = email_1.search(pattern);
+            // alert(email_1);
+            if(result == -1){
+                alert("Not valid");
+            }
+            else if (email_1 != email_2){
+                alert("Not matched")
+            }
+            else if (pass.length < 7){
+                alert("Not valid")
+            }
+            else {
+                alert ("Valid")
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>

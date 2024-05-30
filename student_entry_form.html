@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Student Entry Form</h1><hr>
+
+    <form action="" name="myform">
+        Student ID: <input type="text" name="id" placeholder="Enter your ID"><br>
+        Name: <input type="text" name="name" placeholder="Enter your Name"><br>
+        Course: <input type="text" name="course" placeholder="Enter your Course"><br>
+        Year/Scetion: <input type="text" name="section" placeholder="Enter Section"><br>
+        
+        <button type="button" onclick="openWindow()">Try it</button>
+
+
+    </form>
+
+    <script>
+        function openWindow(){
+            let sid = document.myform.id.value;
+            let sn = document.myform.name.value;
+            let co = document.myform.course.value;
+            let year = document.myform.section.value;
+
+            let mywindow = window.open("", "abc", "width=800,height=500");
+
+            // mywindow.document.write("<h1>Students Information</h1><hr>");
+
+            // mywindow.document.write("<ul>");
+
+            // mywindow.document.write("<li>" + sid + "</li>");
+            // mywindow.document.write("<li>" + sn + "</li>");
+            // mywindow.document.write("<li>" + co + "</li>");
+            // mywindow.document.write("<li>" + year + "</li>");
+
+            // mywindow.document.write("<ul>");
+
+            let output;
+
+            output = "<h1> Students Information </h1><hr>";
+            output += "Student ID: " + sid + "<br>";
+            output += "Name: " + sn + "<br>";
+            output += "Course: " + co + "<br>";
+            output += "Section: " + year + "<br>";
+
+            mywindow.document.write(output);
+        }
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" name="myform">
+        <input type="date" name="date">
+        <button onclick="myDay()" type="button">Click</button>
+    </form>
+    
+    <script>
+        function myDay(){
+            let i = document.myform.date.value;
+
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const d = new Date (i);
+            // alert(d);
+            // let x = d.getDay(); 
+            
+            // if (x == 0){
+            //     alert("Sunday");
+            // }
+            // else if (x == 1){
+            //     alert("Monday");
+            // }
+            // else if (x == 2){
+            //     alert("Tuesday");
+            // }
+            // else if (x == 3){
+            //     alert("Wednesday");
+            // }
+            // else if (x == 4){
+            //     alert("Thursday");
+            // }
+            // else if (x == 5){
+            //     alert("Friday");
+            // }
+            // else {
+            //     alert("Saturday");
+            // }
+
+            alert(days[d.getDay()]);
+        }
+ 
+           
+    </script>
+</body>
+</html>

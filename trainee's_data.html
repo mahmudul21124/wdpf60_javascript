@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        form{
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="" name="myform">
+        <fieldset>
+            <legend>Trainee's Data</legend>
+
+            Name: <input type="text" name="name" placeholder="Enter name"><br>
+            Contact: <input type="text" name="contact" placeholder="Enter contact"><br>
+            Remarks: <textarea name="remarks" placeholder="Enter remarks"></textarea><br>
+
+            Sex: 
+            <input type="radio" name="Sex" value="Male"> Male 
+            <input type="radio" name="Sex" value="Female"> Female
+            <br>
+
+            Courses: <br>
+            <input type="checkbox" name="nt" value="NT" class="course"> NT <br>
+            <input type="checkbox" name="iad" value="IAD" class="course"> IAD <br>
+            <input type="checkbox" name="ddd" value="DDD" class="course"> DDD <br>
+            <input type="checkbox" name="esad" value="ESAD" class="course"> ESAD <br>
+
+            Location: 
+            <select name="location">
+                <option>Select One</option>
+                <option value="Banani">Banani</option>
+                <option value="Dhanmondi">Dhanmondi</option>
+                <option value="Mirpur">Mirpur</option>
+            </select><br>
+
+            <button type="button" onclick="data()">Submit</button>
+        </fieldset>
+    </form>
+
+    <script>
+        function data() {
+            let name = document.myform.name.value;
+            let contact = document.myform.contact.value;
+            let remarks = document.myform.remarks.value;
+            let sex = document.myform.Sex.value;
+
+            let course = document.getElementsByClassName("course");
+            let cd = ""
+            for (let i = 0; i < course.length; i++) {
+                if (course[i].checked) {
+                    cd += course[i].value + ", ";
+                }
+            }
+            
+            let location = document.myform.location.value
+
+            let output = "<h1>Trainee Information</h1><hr>";
+            output += "Name: " + name + "<br>";
+            output += "Contact: " + contact + "<br>";
+            output += "Remarks: " + remarks + "<br>";
+            output += "Sex: " + sex + "<br>";
+            output += "Course: " + cd + "<br>";
+            output += "Location: " + location + "<br>";
+            
+            let mywindow = window.open("", "", "width=500px, height=500px")
+
+            mywindow.document.write(output);
+        }
+    </script>
+
+</body>
+
+</html>

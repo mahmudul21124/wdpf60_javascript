@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+
+</head>
+<body>
+    <div id="show"></div>
+
+    <script type="module">
+        import studentInfo, {country, district} from "./student.js";
+
+        let output = studentInfo();
+        output += "<br>" + district + ", " + country;
+        // output += `<br> ${district} , ${country}`;                   // both way can be applied 
+
+        document.getElementById("show").innerHTML = output;
+        
+    </script>
+    
+</body>
+</html>

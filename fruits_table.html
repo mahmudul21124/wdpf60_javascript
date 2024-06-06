@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        th, td {
+            border: 1px solid;
+        }
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        const fruits = ["Apple", "Guava", "Mango", "Pine-Apple", "Grape", "Orange", "Watermalon", "Banana", "Dragon"];
+        
+        let output = "<table>";
+            output += "<caption> FRUITS NAME </caption>";
+            output += "<tr><th>SN</th><th>Fruits Name</th></tr>";
+
+        for (let i = 0; i<fruits.length; i++){
+            sn = i +1;
+            output += "<tr><td>" + sn + "</td>" + "<td>" + fruits[i] + "</td></tr>";
+        }
+
+        output += "</table>";
+
+        document.write(output);
+    </script>
+    
+</body>
+</html>

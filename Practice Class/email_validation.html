@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" name="eform">
+        Email: <input type="text" name="email" placeholder="Enter email"><br>
+        Confirm email: <input type="text" name="con_email" placeholder="Repeat email"><br>
+        Password: <input type="password" name="password" placeholder="Enter password"><br>
+        <button type="button" onclick="emailVali()">Click</button>
+    </form>
+    <script>
+        function emailVali(){
+            let email = document.eform.email.value;
+            let repeat = document.eform.con_email.value;
+            let password = document.eform.password.value;
+
+            let pattern = /[A-z0-9]+@[A-z0-9]+\.[A-z]/;
+            let result = email.search(pattern);
+
+            if (result == -1){
+                alert("Not valid");
+            }
+            else if (email != repeat){
+                alert("Not mactched");
+            }
+            else if (password < 7){
+                alert("Password is short");
+            }
+            else{
+                alert("Valid");
+            }
+        }
+    </script>
+    
+</body>
+</html>

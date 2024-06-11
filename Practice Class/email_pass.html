@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ans to the qn no.2</h1>
+    <hr><br>
+
+    <form action="" name="eform">
+        <fieldset>
+            <legend>Login | Register</legend>
+            Email: <br>
+            <input type="text" name="email" placeholder="Enter email"><br>
+            Password: <br>
+            <input type="password" name="p" placeholder="Enter password"> <br>
+            <button type="button" onclick="myResult()">Login</button>
+        </fieldset>
+    </form>
+
+    <script>
+        class eCheck {
+            constructor(email, password) {
+                this.mail = email;
+                this.pass = password;
+            }
+
+            check() { 
+                let root = /[A-z0-9_]+@[A-z]+\.[a-z]/;
+                let res = this.mail.search(root);
+                // alert(res);
+
+                if (this.mail == "") {
+                    alert("Please enter an email address");
+                }
+                else if (res == -1) {
+                    alert("Email address is not valid");
+                }
+                else if (this.pass == ""){
+                    alert("Please enter password");
+                }
+                else if (this.pass.length < 6) {
+                    alert("Password is short");
+                }
+                else {
+                    document.write("Sucessfully Login");
+                }
+            }
+        }
+
+
+        function myResult() {
+            let ema = document.eform.email.value;
+            let pass = document.eform.p.value;
+
+            let s1 = new eCheck(ema, pass);
+
+            s1.check();
+        }
+    </script>
+
+</body>
+
+</html>

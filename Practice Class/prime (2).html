@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Ans to the qn no.1</h1><hr>
+    <h3>Prime Number Check</h3>
+
+    <script>
+        function primeCheck(){
+            let number = prompt("Enter a number", "");
+
+            if (number == 0){
+                return number + " is not allowed.";
+            }
+            else if (number == 1){
+                return number + " is not a prime number.";
+            }
+            else if (number == 2){
+                return number + " is a prime number.";
+            }
+            else {
+                for (let x = 2; x<number; x++){
+                    if(number % x == 0){
+                        return number + " is not a prime number.";
+                    }
+                }
+                return number + " is a prime number.";
+            }
+        }
+
+        document.write(primeCheck());
+    </script>
+    
+</body>
+</html>

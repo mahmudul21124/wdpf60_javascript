@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="" name="vform">
+        <fieldset>
+            <legend>Students Information</legend>
+            Name: <input type="text" name="name" placeholder="Enter name"><br>
+            Contact: <input type="text" name="contact" placeholder="Enter contact"><br>
+            Remarks: <input type="text" name="remarks" placeholder="Enter remarks"><br>
+            Address: <textarea name="address"></textarea><br>
+
+            Sex: <br>
+            <input type="radio" name="sex" value="Male"> Male <br>
+            <input type="radio" name="sex" value="Female"> Female <br>
+
+            Courses: <br>
+            <input type="checkbox" class="course" value="NT"> NT <br>
+            <input type="checkbox" class="course" value="IAD"> IAD <br>
+            <input type="checkbox" class="course" value="DDD"> DDD <br>
+            <input type="checkbox" class="course" value="ESAD"> ESAD <br>
+
+            Location: <br>
+            <select name="location">
+                <option value="">Select One</option>
+                <option value="Banani">Banani</option>
+                <option value="Dhanmondi">Dhanmondi</option>
+                <option value="Mirpur">Mirpur</option>
+            </select><br>
+
+            <button type="button" onclick="formVali()">Submit</button>
+        </fieldset>
+    </form>
+
+    <script>
+        function formVali() {
+            let name = document.vform.name.value;
+            let contact = document.vform.contact.value;
+            let remarks = document.vform.remarks.value;
+            let address = document.vform.address.value;
+            let sex = document.vform.sex.value;
+
+            let data = "";
+            let result = document.getElementsByClassName("course");
+            for (let x = 0; x < result.length; x++) {
+                if (result[x].checked) {
+                    data += result[x].value;
+                }
+            }
+
+            let location = document.vform.location.value;
+
+            if (name == "") {
+                alert("Not valid");
+            }
+            else if (contact == "") {
+                alert("Not valid");
+            }
+            else if (remarks == "") {
+                alert("Not valid");
+            }
+            else if (address == "") {
+                alert("Not valid");
+            }
+            else if (sex == "") {
+                alert("Not valid");
+            }
+            else if (data == "") {
+                alert("Not valid");
+            }
+            else if (location == "") {
+                alert("Not valid");
+            }
+            else {
+                let output = "<h1> Trainee's Information </h1><hr>";
+                output += "Name: " + name + "<br>";
+                output += "Contact: " + contact + "<br>";
+                output += "Remarks: " + remarks + "<br>";
+                output += "Sex: " + sex + "<br>";
+                output += "Courses: " + data + "<br>";
+                output += "Location: " + location + "<br>";
+
+                let mw = window.open("", "", "height= 350px, width= 400px");
+
+                mw.document.write(output);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

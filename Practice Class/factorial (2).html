@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Ans to the qn no.2</h1><hr>
+    <h3>Factorial Check</h3>
+
+    <div id="show"></div>
+    <script>
+        function factCheck(){
+            let num = prompt("Enter a number", "");
+            fact = 1;
+
+            for(let x = num; x>1; x--){
+                fact = fact * x;
+            }
+            document.getElementById("show").innerHTML = "The factorial value of " + num + " is " + "<b>" + fact + "</b>."; 
+        }
+    </script>
+
+    <button onclick="factCheck()">Check</button>
+    
+</body>
+</html>

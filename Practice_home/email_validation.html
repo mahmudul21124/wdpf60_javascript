@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrong{
+            color: red;
+        }
+        .right{
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="show"></div>
+
+    <script>
+        class V {
+            constructor(email) {
+                this.e = email;
+            }
+
+            x() {
+                let y = /[A-z0-9]+@[A-z]+\.[a-z]/;
+                let z = this.e.search(y);
+                if (z == -1) {
+                    document.getElementById("show").innerHTML = "<h1 class='wrong'> Email Address is Wrong </h1>";
+                }
+                else {
+                    document.getElementById("show").innerHTML = "<h1 class='right'> Email Address is Correct </h1>";
+
+                }
+            }
+        }
+
+        function check() {
+            let a = prompt("Enter email address", "");
+            let b = new V(a);
+            b.x();
+        }
+
+    </script>
+    <button onclick="check()">Check Here</button>
+
+</body>
+
+</html>

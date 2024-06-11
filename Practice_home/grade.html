@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script>
+        function gradeCheck(){
+            let number = prompt("Enter number", "");
+
+            if (number >= 80){
+                document.getElementById("result").innerHTML = "Grade A+";
+            }
+            else if (number >= 70){
+                document.getElementById("result").innerHTML = "Grade A";
+            }
+            else if (number >= 60){
+                document.getElementById("result").innerHTML = "Grade B";
+            }
+            else {
+                document.getElementById("result").innerHTML = "Grade F";
+            }
+        }
+    </script>
+    <button onclick="gradeCheck()">Check</button>
+</body>
+</html>

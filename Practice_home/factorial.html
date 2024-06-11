@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        function factCheck(){
+            let num = prompt("Enter a number", "");
+            fact = 1;
+
+            for (let x = num; x>=1; x--){
+                fact = fact * x;
+            }
+            document.getElementById("show").innerHTML = fact;
+        }
+    </script>
+    <button onclick="factCheck()">Check</button>
+</body>
+</html>

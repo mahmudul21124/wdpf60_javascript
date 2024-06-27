@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="form_object_oriented.js"></script>
+</head>
+<body>
+
+    <form action="" name="myform" style="line-height: 25px;">
+        <fieldset style="width: fit-content;">
+            <legend>Students Information</legend>
+            Name : <br> <input type="text" name="name" placeholder="Enter name"><br>
+            Contact : <br> <input type="text" name="contact" placeholder="Enter contact"><br>
+            Remarks : <br> <textarea name="remarks" placeholder="Enter remarks"></textarea><br>
+
+            Sex : <br>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female <br>
+
+            Courses : <br>
+            <input type="checkbox" class="course" value="NT"> NT <br>
+            <input type="checkbox" class="course" value="IAD"> IAD <br>
+            <input type="checkbox" class="course" value="DDD"> DDD <br>
+            <input type="checkbox" class="course" value="ESAD"> ESAD <br>
+
+            Location : <br>
+            <select name="location">
+                <option value="">Select One</option>
+                <option value="Banani">Banani</option>
+                <option value="Dhanmondi">Dhanmondi</option>
+                <option value="Mirpur">Mirpur</option>
+            </select><br>
+            <button type="button" onclick="formV()">Submit</button>
+        </fieldset>
+    </form>
+
+    <script>
+        function formV(){
+        let n = document.myform.name.value;
+        let con = document.myform.contact.value;
+        let re = document.myform.remarks.value;
+        let s = document.myform.gender.value;
+
+        let data = "";
+        let x = document.getElementsByClassName("course");
+        for(let i=1; i<x.length; i++ ){
+             if (x[i].checked){
+                data += x[i].value + ", ";
+             }
+        }
+
+        let lo = document.myform.location.value;
+
+        
+            let obj = new formValidation(n, con, re, s, data, lo);
+
+            obj.vali();
+        }
+        
+
+        
+    </script>
+
+    
+</body>
+</html>

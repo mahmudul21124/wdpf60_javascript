@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ans to the qn no.1</h1>
+
+    <form name="sform">
+        <fieldset style="width: fit-content;">
+            <legend>Student Registration</legend>
+            Name: <br> <input type="text" name="name" placeholder="Enter name"> <br>
+            Contact: <br> <input type="text" name="contact" placeholder="Enter contact"><br>
+            Address: <br> <textarea name="address" placeholder="Enter address"></textarea><br>
+            Gender: <br>
+            <input type="radio" name="gender" value="Male"> Male <br>
+            <input type="radio" name="gender" value="Female"> Female <br>
+            Subject: <br>
+            <select name="subject">
+                <option value="">Select One</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Physics">Physics</option>
+                <option value="English">English</option>
+            </select><br>
+            Course: <br>
+            <input type="checkbox" class="c" value="ICT">ICT <br>
+            <input type="checkbox" class="c" value="Biology">Biology <br>
+            <input type="checkbox" class="c" value="Bangla">Bangla <br>
+            <input type="checkbox" class="c" value="Math">Math <br>
+            <button type="button" onclick="formCatch()">Submit</button>
+        </fieldset>
+    </form>
+
+    <script>
+        class formValidation{
+            constructor(name, contact, address, gender, subject, course){
+                this.name = name;
+                this.contact = contact;
+                this.address = address;
+                this.gender = gender;
+                this.subject = subject;
+                this.course = course;
+            }
+
+            validate(){
+                let x = window.open("", "abc", "width=400, height= 500");
+                let output = "<h3> Student Registration</h3>";
+                output += "Name: " + this.name + "<br>";
+                output += "Contact: " + this.contact + "<br>";
+                output += "Address: " + this.address + "<br>";
+                output += "Gender: " + this.gender + "<br>";
+                output += "Subject: " + this.subject + "<br>";
+                output += "Course: " + this.course + "<br>";
+
+                x.document.write(output);
+            }
+        }
+
+        function formCatch(){
+            let name = document.sform.name.value;
+            let contact = document.sform.contact.value;
+            let address = document.sform.address.value;
+            let gender = document.sform.gender.value;
+            let subject = document.sform.subject.value;
+            let course = "";
+            let a = document.getElementsByClassName("c");
+            for(let i = 0; i<a.length; i++){
+                if(a[i].checked){
+                course += a[i].value + ", ";
+                }
+            }
+
+            let obj = new formValidation(name, contact, address, gender, subject, course );
+            obj.validate();
+        }
+    </script>
+    
+</body>
+</html>

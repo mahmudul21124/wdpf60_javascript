@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pass{
+            color: green;
+        }
+        .fail{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ans to the qn no.1</h1><hr>
+
+    <h3>Pass Fail Check</h3>
+    
+    <form name="pfform">
+        MCQ: <br> <input type="text" name="mcq" placeholder="Enter MCQ marks"> <br>
+        Descriptive: <br> <input type="text" name="des" placeholder="Enter DESCRIPTIVE marks"> <br>
+        Evidence: <br> <input type="text" name="evi" placeholder="Enter EVIDENCE marks"> <br>
+        <button type="button" onclick="pass_fail()">Submit</button>
+    </form>
+
+    <script>
+        function pass_fail(){
+            let mcq = document.pfform.mcq.value; 
+            let des = document.pfform.des.value;
+            let evi = document.pfform.evi.value;
+
+            if (mcq >= 80 && des >=60 && evi >= 60){
+                document.getElementById("result").innerHTML = "<b class='pass'> You have passed </b>";
+            }
+            else{
+                document.getElementById("result").innerHTML = "<b class='fail'> You have failed </b>";
+            }
+        }
+    </script>
+    <div id="result"></div>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ans to the qn no.3</h1><hr>
+    <h3>Trainee's Data new window</h3>
+    <form action="" name="tform">
+        <fieldset style="width: fit-content;">
+            <legend>Trainee's Data</legend>
+            Name: <br> <input type="text" name="name" placeholder="Enter name"><br>
+            Address: <br><textarea name="address" placeholder="Enter address"></textarea><br>
+            Sex: <br>
+            <input type="radio" name="sex" value="Male"> Male 
+            <input type="radio" name="sex" value="Female"> Female <br>
+            Programming: <br>
+            <input type="checkbox" class="program" value="PHP"> PHP <br>
+            <input type="checkbox" class="program" value="JavaScript"> JavaScript <br>
+            <input type="checkbox" class="program" value="Python"> Python <br>
+            <input type="checkbox" class="program" value="Oracle"> Oracle <br>
+            Location: <br>
+            <select name="location">
+                <option value="">Select One</option>
+                <option value="Banani">Banani</option>
+                <option value="Dhanmondi">Dhanmondi</option>
+                <option value="Mirpur">Mirpur</option>
+            </select><br>
+            <button type="button" onclick="traineeForm()">Click</button>
+        </fieldset>
+    </form>
+
+    <script>
+        class traineeValidation{
+            constructor(name, address, sex, programming, location){
+                this.name = name;
+                this.add = address;
+                this.sex = sex;
+                this.pro = programming;
+                this.location = location;
+            }
+
+            validation(){
+                let twin = window.open("", "abc","width=400, height=500");
+                let output = "<h3>Trainee's Data </h3><hr><br>";
+                output += "<b>Name:</b> " + this.name + "<br>";
+                output += "<b>Address:</b> " + this.add + "<br>";
+                output += "<b>Sex:</b> " + this.sex + "<br>";
+                output += "<b>Programming:</b> " + this.pro + "<br>";
+                output += "<b>Location:</b> " + this.location + "<br>";
+
+                twin.document.write(output);
+            }
+        }
+
+        function traineeForm(){
+            let name = document.tform.name.value;
+            let add = document.tform.address.value;
+            let sex = document.tform.sex.value;
+            let pro = "";
+            let x = document.getElementsByClassName("program");
+            for(let i=0; i<x.length; i++){
+                if(x[i].checked){
+                    pro += x[i].value + ", ";
+                }
+            }
+            let loc = document.tform.location.value;
+
+            let obj = new traineeValidation(name, add, sex, pro, loc);
+            obj.validation();
+        }
+    </script>
+    
+</body>
+</html>

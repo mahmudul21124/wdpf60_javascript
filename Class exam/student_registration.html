@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrong{
+            color: red;
+        }
+        .right{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ans to the qn no.1</h1><hr>
+    <h3>Student Registration form</h3>
+
+    <form action="" name="sform">
+        <fieldset style="width: fit-content;">
+            <legend>Student Registration</legend>
+            <b>Name:</b><br> <input type="text" name="name" placeholder="Enter name"><br>
+            <b>Email:</b><br> <input type="text" name="email" placeholder="Enter email"><br>
+            <b>Phone:</b><br> <input type="text" name="phone" placeholder="Enter phone"><br>
+            <b>Password:</b><br> <input type="text" name="pass" placeholder="Enter password"><br>
+            <b>Repeat password:</b><br> <input type="text" name="re" placeholder="Repeat password"><br>
+            <button type="button" onclick="stuCheck()">Submit</button>
+        </fieldset>
+    </form>
+
+    <script>
+        class studentValidation{
+            constructor(name, email, phone, password, repeat){
+                this.name = name;
+                this.mail = email;
+                this.phone = phone;
+                this.pass = password;
+                this.re = repeat;
+            }
+
+            validation(){
+                if(this.pass != this.re){
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+
+        function stuCheck(){
+            let name = document.sform.name.value;
+            let email = document.sform.email.value;
+            let phone = document.sform.phone.value;
+            let pass = document.sform.pass.value;
+            let re = document.sform.re.value;
+
+            let obj = new studentValidation(name,email, phone, pass, re);
+
+            if(name == ""){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Enter name</b>";
+            }
+            else if (email == ""){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Enter email</b>";
+            }
+            else if(phone == ""){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Enter phone</b>";
+            }
+            else if(pass == ""){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Enter password</b>";
+            }
+            else if(re == ""){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Enter repeat password</b>";
+            }
+            else if (obj.validation()== false){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Password did not match</b>";
+            }
+            else{
+                document.getElementById("show").innerHTML = "<b class='right'>Valid form</b>";
+            }
+
+        }
+    </script>
+    <div id="show"></div>
+    
+</body>
+</html>

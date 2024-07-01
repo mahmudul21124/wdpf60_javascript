@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Factorial Number Check</h3><hr>
+
+    <form action="" name="fform">
+        <input type="text" name="numa" placeholder="Enter a number"><br>
+        <button type="button" onclick="factCheck()">Check</button>
+    </form>
+
+    <script>
+        function factCheck(){
+            let num = document.fform.numa.value;
+
+        let fact = 1;
+        for (let x = num; x>=1; x--){
+            fact = fact * x;
+        }
+        document.getElementById("show").innerHTML = "The factorial number of "+ num + " is "+ fact;
+        }
+    </script>
+    <div id="show"></div>
+    
+</body>
+</html>

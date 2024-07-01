@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrong{
+            color: red;
+        }
+        .right{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ans to the qn no.2</h1><hr>
+    <h3>Email validation</h3>
+
+    <form action="" name="eform">
+        <b>Email:</b> <br> 
+        <input type="text" name="email" placeholder="Enter email"><br>
+        <button type="button" onclick="emailCheck()">Submit</button>
+    </form>
+
+    <script>
+        class emailValidation{
+            constructor(email){
+                this.mail = email;
+            }
+
+            validation(){
+                let pattern = /[A-z0-9!#$_]+@[a-z]+\.[a-z]{2,4}/;
+                let result = this.mail.search(pattern);
+
+                if (result == -1){
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+
+        function emailCheck(){
+            let email = document.eform.email.value;
+
+            let obj = new emailValidation(email);
+
+            if(email == ""){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Enter email</b>"
+            }
+            else if(obj.validation()){
+                document.getElementById("show").innerHTML = "<b class='right'>Valid email address</b>"
+            }
+            else{
+                document.getElementById("show").innerHTML = "<b class='wrong'>Invalid email address</b>"
+            }
+        }
+    </script>
+    <div id="show"></div>
+    
+</body>
+</html>

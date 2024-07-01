@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ans to the qn no.3</h1><hr>
+    <h3>Biling Information</h3>
+
+    <form action="" name="bform">
+        <fieldset style="width: fit-content;">
+            <legend>Biling Information</legend>
+            <b>First Name:</b> <br> <input type="text" name="fname" placeholder="Enter first name"><br>
+            <b>Last Name:</b> <br> <input type="text" name="lname" placeholder="Enter last name"><br>
+            <b>Sex:</b> <br>
+            <input type="radio" name="sex" value="Male"> Male
+            <input type="radio" name="sex" value="Female"> Female <br>
+            <b>Language:</b> <br>
+            <input type="checkbox" class="lan" value="English"> English <br>
+            <input type="checkbox" class="lan" value="Bangla"> Bangla <br>
+            <input type="checkbox" class="lan" value="Frensh"> Frensh <br>
+            <input type="checkbox" class="lan" value="Spanish"> Spanish <br>
+            <b>Address:</b> <br> <textarea name="address"></textarea><br>
+            <b>District:</b><br>
+            <select name="district">
+                <option value="">Select One</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Cumilla">Cumilla</option>
+                <option value="Sylhet">Sylhet</option>
+            </select><br>
+            <b>Zip code:</b> <br> <input type="text" name="zip" placeholder="Enter zip code"><br>
+            <button type="button" onclick="billCheck()">Submit</button> 
+        </fieldset>
+    </form>
+
+    <script>
+        class billValidation{
+            constructor(fname, lname, sex, language, address, district, zip){
+                this.fname = fname;
+                this.lname = lname;
+                this.sex = sex;
+                this.lan = language;
+                this.add = address;
+                this.dis = district;
+                this.zip = zip;
+            }
+
+            validation(){
+                let wina = window.open("", "abc", "height=500, width=400")
+                let output= "<h3> Billing Information </h3><hr><br>";
+                output += "<b>First Name:</b> " + this.fname + "<br>";
+                output += "<b>Last Name:</b> " + this.lname + "<br>";
+                output += "<b>Sex:</b> " + this.sex + "<br>";
+                output += "<b>Language:</b> " + this.lan + "<br>";
+                output += "<b>Address:</b> " + this.add + "<br>";
+                output += "<b>District:</b> " + this.dis + "<br>";
+                output += "<b>Zip Code:</b> " + this.zip + "<br>";
+
+                wina.document.write(output);
+            }
+        }
+
+        function billCheck(){
+            let fname = document.bform.fname.value;
+            let lname = document.bform.lname.value;
+            let sex = document.bform.sex.value;
+            let lan = "";
+            let x = document.getElementsByClassName("lan");
+            for(let i=0; i<x.length;i++){
+                if(x[i].checked){
+                    lan + x[i].value + ", ";
+                }
+            }
+            let add = document.bform.address.value;
+            let dis = document.bform.district.value;
+            let zip = document.bform.zip.value;
+
+            let obj = new billValidation(fname, lname, sex, lan, add, dis, zip);
+            obj.validation();
+        }
+    </script>
+    
+</body>
+</html>
